@@ -1,7 +1,9 @@
 package com.nagar;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Project {
@@ -10,6 +12,15 @@ public class Project {
 	private String pName;
 	private String type;
 	
+	@OneToOne(mappedBy="project",fetch = FetchType.LAZY)
+	private Student student;
+	
+	public Student getStudent() {
+		return student;
+	}
+	public void setStudent(Student student) {
+		this.student = student;
+	}
 	public Project(int pCode) {
 		super();
 		this.pCode = pCode;

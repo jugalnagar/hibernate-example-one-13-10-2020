@@ -19,6 +19,11 @@ public class Student {
 		this.project = project;
 	}
 	
+	public Student(int rollNo) {
+		super();
+		this.rollNo = rollNo;
+	}
+	
 	public Student() {
 		super();
 	}
